@@ -1,0 +1,58 @@
+<% include header %>
+
+
+<div class="page-header">
+
+ <h1 class="text-center">Student info</h1>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div id="studentInfo">
+      
+      <form class="form-group" >
+        <!-- action="Javascript:displayLocation()" -->
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <label><%= infocards[0].name %></label>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <label><%= infocards[0].email %></label>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <label><%= infocards[0].address %></label>
+
+          </div>
+        </div>
+      </form>
+    </div>
+              <form action="/" method="GET" >
+
+          <button class ="btn btn-warning">Back</button>
+
+              </form>
+
+        <form action="/update/<%= infocards[0]._id%>" method="GET" >
+
+          <button class ="btn btn-danger">Update</button>
+
+        </form>
+             
+      <!--  <button onclick="location.href='/'" -->
+  
+  </div>
+
+  <div class="col-md-6">
+
+        <% var j = infocards.length - 1 %>
+
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=<%= infocards[j].address %> &key=AIzaSyDhB1cdUhHmarTzQ-umVmo47WzlkLnNSBs" allowfullscreen></iframe>   
+  </div>
+
+
+</div>
+    <%include footer %>
